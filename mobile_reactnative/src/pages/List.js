@@ -36,8 +36,11 @@ export default function List({ navigation }) {
           <SpotList key={tech} tech={tech} />
         ))}
       </ScrollView>
-      <TouchableOpacity onPress={handleLogoff} style={styles.button}>
-        <Text style={styles.buttonText}>Logoff</Text>
+      <TouchableOpacity
+        onPress={handleLogoff}
+        style={[styles.button, styles.buttonLogoff]}
+      >
+        <Text style={[styles.buttonText, styles.buttonLogoffText]}>Logoff</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -64,9 +67,19 @@ const styles = StyleSheet.create({
     marginTop: 15
   },
 
+  buttonLogoff: {
+    height: 30,
+    backgroundColor: '#ccc'
+  },
+
   buttonText: {
     color: '#FFF',
     fontWeight: 'bold',
     fontSize: 15
+  },
+
+  buttonLogoffText: {
+    color: '#000000',
+    fontSize: 12
   }
 });
